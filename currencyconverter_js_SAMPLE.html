@@ -1,0 +1,78 @@
+<!--Simply copy and paste into <BODY>  
+     Just above the </BODY> tag. -->
+
+<script language="JavaScript">
+<!--
+// Author: Weslley A. Harakawa (weslley@wcre8tiver.com)
+	var rate = new Array(1,0.983271,13.7603,40.3399,1.95583,166.386,5.94573,6.55957,340.75,0.787564,1936.27,40.3399,2.20371,200.482);
+	function currency_convert(origin) {
+		var origin_value = eval('document.currency.c'+origin+'.value');
+		var euro_equivalent = rate[origin];
+		var v;
+		for (i=0; i<rate.length; i++) {
+			if (i!=origin) {
+				v = Math.round(rate[i]*origin_value/euro_equivalent*100)/100;
+				eval('document.currency.c'+i+'.value = '+v);
+			}
+		}
+		return true;
+	}
+// -->
+</script>
+
+
+<form name="currency">
+<table cellspacing="0" cellpadding="0" border="1" bordercolor="#336699">
+<tr><td><font face="Arial" size="2"><br>
+  Enter an amount in any currency below<br>
+   </font></td></tr><tr><td>
+<table cellspacing="1" cellpadding="1" border="0"><tr>
+<td><img src="images/eur.gif" alt="Europe" width="30" height="20"></td>
+<td>EUR</td>
+<td><input type="text" name="c0" value="" size="10" onKeyUp="currency_convert(0);"></td>
+<td><img src="images/us.gif" alt="USA" width="30" height="20"></td>
+<td>US$</td>
+<td><input type="text" name="c1" value="" size="10" onKeyUp="currency_convert(1);"></td>
+</tr><tr>
+<td><img src="images/at.gif" alt="Austria" width="30" height="20"></td>
+<td>ATS</td>
+<td><input type="text" name="c2" value="" size="10" onKeyUp="currency_convert(2);"></td>
+<td><img src="images/be.gif" alt="Belgium" width="30" height="20"></td>
+<td>BEF</td>
+<td><input type="text" name="c3" value="" size="10" onKeyUp="currency_convert(3);"></td>
+<td><img src="images/de.gif" alt="Germany" width="30" height="20"></td>
+<td>DEM</td>
+<td><input type="text" name="c4" value="" size="10" onKeyUp="currency_convert(4);"></td>
+</tr><tr>
+<td><img src="images/es.gif" alt="Spain" width="30" height="20"></td>
+<td>ESP</td>
+<td><input type="text" name="c5" value="" size="10" onKeyUp="currency_convert(5);"></td>
+<td><img src="images/fi.gif" alt="Finland" width="30" height="20"></td>
+<td>FIM</td>
+<td><input type="text" name="c6" value="" size="10" onKeyUp="currency_convert(6);"></td>
+<td><img src="images/fr.gif" alt="France" width="30" height="20"></td>
+<td>FRF</td>
+<td><input type="text" name="c7" value="" size="10" onKeyUp="currency_convert(7);"></td>
+</tr><tr>
+<td><img src="images/gr.gif" alt="Greece" width="30" height="20"></td>
+<td>GRD</td>
+<td><input type="text" name="c8" value="" size="10" onKeyUp="currency_convert(8);"></td>
+<td><img src="images/ie.gif" alt="Ireland" width="30" height="20"></td>
+<td>IEP</td>
+<td><input type="text" name="c9" value="" size="10" onKeyUp="currency_convert(9);"></td>
+<td><img src="images/it.gif" alt="Italy" width="30" height="20"></td>
+<td>ITL</td>
+<td><input type="text" name="c10" value="" size="10" onKeyUp="currency_convert(10);"></td>
+</tr><tr>
+<td><img src="images/lu.gif" alt="Luxembourg" width="30" height="20"></td>
+<td>LUF</td>
+<td><input type="text" name="c11" value="" size="10" onKeyUp="currency_convert(11);"></td>
+<td><img src="images/nl.gif" alt="Netherlands" width="30" height="20"></td>
+<td>NLG</td>
+<td><input type="text" name="c12" value="" size="10" onKeyUp="currency_convert(12);"></td>
+<td><img src="images/pt.gif" alt="Portugal" width="30" height="20"></td>
+<td>PTE</td>
+<td><input type="text" name="c13" value="" size="10" onKeyUp="currency_convert(13);"></td>
+</tr></table>
+</td></tr></table>
+</form>
